@@ -1,6 +1,8 @@
 backend:
   name: git-gateway
   branch: main
+  identity_url: "https://lacasitadediamantesac.netlify.app/.netlify/identity"
+  gateway_url: "https://lacasitadediamantesac.netlify.app/.netlify/git"
 
 media_folder: "public/assets/uploads"
 public_folder: "/assets/uploads"

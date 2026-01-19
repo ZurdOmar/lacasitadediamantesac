@@ -11,9 +11,19 @@
 <body>
   <!-- Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <div id="emergency-btn" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; display: none;">
+    <button onclick="window.netlifyIdentity.open()"
+      style="background: #ff4b2b; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+      ¿El botón no responde? Clic aquí
+    </button>
+  </div>
+
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
+        console.log("Identity init");
+        document.getElementById('emergency-btn').style.display = 'block';
         if (!user) {
           window.netlifyIdentity.on("login", () => {
             document.location.href = "/admin/";
