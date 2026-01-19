@@ -33,7 +33,8 @@ collections:
     label: "Actividades"
     folder: "src/data/activities"
     create: true
-    slug: "{{title}}"
+    format: "json"
+    slug: "{{slug}}"
     fields:
       - {label: "Título", name: "title", widget: "string"}
       - {label: "Descripción", name: "description", widget: "text"}
