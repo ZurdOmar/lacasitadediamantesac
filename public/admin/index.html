@@ -12,18 +12,12 @@
   <!-- Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
-    // Forzar la apertura del widget al hacer clic en cualquier parte si el botón falla
-    document.addEventListener('click', function (e) {
-      const isLoginBtn = e.target.closest('button') && e.target.innerText.includes('Login');
-      if (isLoginBtn) {
-        console.log("Detectado clic en Login, forzando apertura...");
-        if (window.netlifyIdentity) {
-          window.netlifyIdentity.open();
-        }
-      }
-    });
-
     if (window.netlifyIdentity) {
+      // Forzar la inicialización con la URL correcta para evitar conflictos de caché
+      window.netlifyIdentity.init({
+        url: 'https://lacasitadediamantesac.netlify.app'
+      });
+
       window.netlifyIdentity.on("init", user => {
         if (!user) {
           window.netlifyIdentity.on("login", () => {
@@ -32,6 +26,15 @@
         }
       });
     }
+
+    // Forzar apertura manual si falla el botón
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('button') && e.target.innerText.includes('Login')) {
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.open();
+        }
+      }
+    });
   </script>
 </body>
 
