@@ -1,0 +1,16 @@
+{
+    "docs": [
+        {
+            "name": "Estatus CLUNI",
+            "description": "Registro Federal de las Organizaciones de la Sociedad Civil activa."
+        },
+        {
+            "name": "Donataria Autorizada",
+            "description": "Autorización vigente por el SAT para expedir recibos deducibles."
+        },
+        {
+            "name": "Informe Anual 2024",
+            "description": "Resultados e impacto de nuestros programas durante el último año."
+        }
+    ]
+}

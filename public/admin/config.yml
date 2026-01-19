@@ -1,0 +1,56 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "config"
+    label: "Configuración General"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "hero"
+        label: "Sección Inicio (Hero)"
+        file: "src/data/hero.json"
+        fields:
+          - {label: "Slogan Corto", name: "slogan", widget: "string"}
+          - {label: "Título Principal (Línea 1)", name: "title1", widget: "string"}
+          - {label: "Título Principal (Línea 2)", name: "title2", widget: "string"}
+          - {label: "Descripción", name: "description", widget: "text"}
+      - name: "donations"
+        label: "Sección Donaciones (Impacto)"
+        file: "src/data/donations.json"
+        fields:
+          - {label: "Número Impacto 1", name: "impactTitle", widget: "string"}
+          - {label: "Descripción Impacto 1", name: "impactDescription", widget: "string"}
+          - {label: "Número Impacto 2", name: "impactTitle2", widget: "string"}
+          - {label: "Descripción Impacto 2", name: "impactDescription2", widget: "string"}
+
+  - name: "activities"
+    label: "Actividades"
+    folder: "src/data/activities"
+    create: true
+    slug: "{{title}}"
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Descripción", name: "description", widget: "text"}
+      - {label: "Icono", name: "icon", widget: "select", options: ["BookOpen", "Palette", "Users", "Smile"]}
+      - {label: "Imagen", name: "image", widget: "image"}
+
+  - name: "transparency_legal"
+    label: "Transparencia"
+    delete: false
+    files:
+      - name: "legal"
+        label: "Documentos Legales"
+        file: "src/data/transparency.json"
+        fields:
+          - label: "Documentos"
+            name: "docs"
+            widget: "list"
+            fields:
+              - {label: "Nombre del Documento", name: "name", widget: "string"}
+              - {label: "Descripción", name: "description", widget: "string"}
