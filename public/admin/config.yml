@@ -1,8 +1,6 @@
 backend:
   name: git-gateway
   branch: main
-  repo: ZurdOmar/lacasitadediamantesac
-  site_id: 228e45ea-f3cc-40d2-b4d9-d7296e550224
 
 media_folder: "public/assets/uploads"
 public_folder: "/assets/uploads"
