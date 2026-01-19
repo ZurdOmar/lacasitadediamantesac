@@ -10,6 +10,19 @@
 
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    console.log("Admin page loaded. Checking Netlify Identity...");
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        console.log("Netlify Identity initialized. User:", user);
+      });
+      window.netlifyIdentity.on("error", err => {
+        console.error("Netlify Identity Error:", err);
+      });
+    } else {
+      console.error("Netlify Identity widget not found on window object.");
+    }
+  </script>
 </body>
 
 </html>
