@@ -11,6 +11,22 @@
 <body>
   <!-- Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <!-- Script para forzar la apertura del widget si falla el botón automático -->
+  <script>
+    document.addEventListener('click', function (e) {
+      if (e.target && e.target.innerText && e.target.innerText.includes('Login with Netlify Identity')) {
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.open();
+        }
+      }
+    });
+
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("login", () => {
+        document.location.href = "/admin/";
+      });
+    }
+  </script>
 </body>
 
 </html>
