@@ -20,6 +20,10 @@
           });
         }
       });
+      // Forzar el sitio correcto
+      window.netlifyIdentity.init({
+        API_URL: 'https://lacasitadediamantesac.netlify.app/.netlify/identity'
+      });
     }
   </script>
 </body>
