@@ -12,6 +12,17 @@
   <!-- Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
+    // Forzar la apertura del widget al hacer clic en cualquier parte si el botón falla
+    document.addEventListener('click', function (e) {
+      const isLoginBtn = e.target.closest('button') && e.target.innerText.includes('Login');
+      if (isLoginBtn) {
+        console.log("Detectado clic en Login, forzando apertura...");
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.open();
+        }
+      }
+    });
+
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {
