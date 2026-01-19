@@ -13,11 +13,6 @@
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
     if (window.netlifyIdentity) {
-      // Forzar la inicialización con la URL correcta para evitar conflictos de caché
-      window.netlifyIdentity.init({
-        url: 'https://lacasitadediamantesac.netlify.app'
-      });
-
       window.netlifyIdentity.on("init", user => {
         if (!user) {
           window.netlifyIdentity.on("login", () => {
@@ -26,15 +21,6 @@
         }
       });
     }
-
-    // Forzar apertura manual si falla el botón
-    document.addEventListener('click', function (e) {
-      if (e.target.closest('button') && e.target.innerText.includes('Login')) {
-        if (window.netlifyIdentity) {
-          window.netlifyIdentity.open();
-        }
-      }
-    });
   </script>
 </body>
 
