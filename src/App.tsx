@@ -5,7 +5,7 @@ import Activities from './components/Activities';
 import Donations from './components/Donations';
 import Transparency from './components/Transparency';
 import Chatbot from './components/Chatbot';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 declare global {
   interface Window {
@@ -16,6 +16,8 @@ declare global {
 import footerData from './data/footer.json';
 
 function App() {
+  const [isActivityDetailOpen, setIsActivityDetailOpen] = useState(false);
+
   useEffect(() => {
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", (user: any) => {
@@ -33,10 +35,14 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <Mission />
-        <Activities />
-        <Transparency />
-        <Donations />
+        {!isActivityDetailOpen && <Mission />}
+        <Activities onStateChange={(isOpen: boolean) => setIsActivityDetailOpen(isOpen)} />
+        {!isActivityDetailOpen && (
+          <>
+            <Transparency />
+            <Donations />
+          </>
+        )}
       </main>
       <Chatbot />
       <footer style={{

@@ -59,6 +59,12 @@ collections:
         fields:
           - {label: "Mensaje de Bienvenida", name: "welcomeMessage", widget: "string"}
           - {label: "Mensaje de Error/Fallback", name: "fallbackMessage", widget: "text"}
+          - label: "Botones de Opciones Rápidas"
+            name: "options"
+            widget: "list"
+            fields:
+              - {label: "Texto del Botón", name: "label", widget: "string"}
+              - {label: "Palabra Clave (para la respuesta)", name: "key", widget: "string"}
           - label: "Base de Conocimientos"
             name: "knowledgeBase"
             widget: "list"
@@ -82,7 +88,12 @@ collections:
       - {label: "Título", name: "title", widget: "string"}
       - {label: "Descripción", name: "description", widget: "text"}
       - {label: "Icono", name: "icon", widget: "select", options: ["BookOpen", "Palette", "Users", "Smile"]}
-      - {label: "Imagen", name: "image", widget: "image"}
+      - {label: "Imagen Principal", name: "image", widget: "image"}
+      - label: "Galería de Fotos"
+        name: "gallery"
+        widget: "list"
+        summary: "{{fields.image}}"
+        field: {label: "Imagen", name: "image", widget: "image"}
 
   - name: "transparency_legal"
     label: "Transparencia"

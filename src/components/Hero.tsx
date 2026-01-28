@@ -75,7 +75,9 @@ const Hero = () => {
                         justifyContent: 'center',
                         flexWrap: 'wrap'
                     }}>
-                        <button className="btn-primary" style={{ minWidth: '180px' }}>Ver actividades</button>
+                        <a href="#actividades">
+                            <button className="btn-primary" style={{ minWidth: '180px' }}>Ver actividades</button>
+                        </a>
                         <button style={{
                             backgroundColor: 'white',
                             color: 'var(--color-text-primary)',

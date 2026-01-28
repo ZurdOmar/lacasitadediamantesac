@@ -1,5 +1,23 @@
 {
     "welcomeMessage": "¡Hola! Soy el asistente de La Casita de Diamantes A.C. ¿En qué puedo ayudarte hoy?",
+    "options": [
+        {
+            "label": "¿Cómo puedo donar?",
+            "key": "donar"
+        },
+        {
+            "label": "¿Qué actividades realizan?",
+            "key": "actividades"
+        },
+        {
+            "label": "Información Legal (CLUNI)",
+            "key": "cluni"
+        },
+        {
+            "label": "Quiero apoyarlos",
+            "key": "contacto"
+        }
+    ],
     "fallbackMessage": "Lo siento, no tengo esa información exacta. Pero puedes contactarnos directamente y con gusto te atenderemos.",
     "knowledgeBase": [
         {
