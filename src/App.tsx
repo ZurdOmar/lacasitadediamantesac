@@ -13,6 +13,8 @@ declare global {
   }
 }
 
+import footerData from './data/footer.json';
+
 function App() {
   useEffect(() => {
     if (window.netlifyIdentity) {
@@ -42,12 +44,26 @@ function App() {
         textAlign: 'center',
         borderTop: '1px solid #eee',
         marginTop: '4rem',
-        color: 'var(--color-text-secondary)'
+        color: 'var(--color-text-secondary)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '1rem'
       }}>
-        <p>&copy; 2026 La Casita de Diamantes A.C. | Todos los derechos reservados.</p>
-        <p style={{ fontSize: '0.8rem', marginTop: '0.5rem' }}>
-          Diseñado con amor por una niñez más brillante.
+        <p>{footerData.copyright}</p>
+        <p style={{ fontSize: '0.8rem' }}>
+          {footerData.credit}
         </p>
+        <img
+          src="/assets/uploads/Logo-zotek_animado.svg"
+          alt="Logo Empresa"
+          style={{
+            height: '40px',
+            width: 'auto',
+            marginTop: '1rem',
+            opacity: 0.8
+          }}
+        />
       </footer>
     </div>
   );

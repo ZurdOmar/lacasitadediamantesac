@@ -1,3 +1,4 @@
+local_backend: true
 backend:
   name: git-gateway
   branch: main
@@ -20,14 +21,56 @@ collections:
           - {label: "Título Principal (Línea 1)", name: "title1", widget: "string"}
           - {label: "Título Principal (Línea 2)", name: "title2", widget: "string"}
           - {label: "Descripción", name: "description", widget: "text"}
+      - name: "mission"
+        label: "Nuestra Esencia (Misión)"
+        file: "src/data/mission.json"
+        fields:
+          - {label: "Título de Sección", name: "title", widget: "string"}
+          - {label: "Párrafo 1", name: "description1", widget: "text"}
+          - {label: "Párrafo 2", name: "description2", widget: "text"}
+          - label: "Pilares"
+            name: "pillars"
+            widget: "list"
+            fields:
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Descripción", name: "description", widget: "text"}
+              - {label: "Icono", name: "icon", widget: "select", options: ["Users2", "Target", "Shield"]}
       - name: "donations"
         label: "Sección Donaciones (Impacto)"
         file: "src/data/donations.json"
         fields:
+          - {label: "Título de Sección", name: "sectionTitle", widget: "string"}
+          - {label: "Título Ayuda", name: "helperTitle", widget: "string"}
+          - {label: "Descripción Ayuda", name: "helperDescription", widget: "text"}
           - {label: "Número Impacto 1", name: "impactTitle", widget: "string"}
           - {label: "Descripción Impacto 1", name: "impactDescription", widget: "string"}
           - {label: "Número Impacto 2", name: "impactTitle2", widget: "string"}
           - {label: "Descripción Impacto 2", name: "impactDescription2", widget: "string"}
+          - {label: "Descripción Principal Impacto", name: "impactDescriptionMain", widget: "text"}
+      - name: "transparency_config"
+        label: "Transparencia (Textos)"
+        file: "src/data/transparency.json"
+        fields:
+          - {label: "Título de Sección", name: "sectionTitle", widget: "string"}
+          - {label: "Descripción de Sección", name: "sectionDescription", widget: "text"}
+      - name: "chatbot"
+        label: "Asistente Virtual (Chatbot)"
+        file: "src/data/chatbot.json"
+        fields:
+          - {label: "Mensaje de Bienvenida", name: "welcomeMessage", widget: "string"}
+          - {label: "Mensaje de Error/Fallback", name: "fallbackMessage", widget: "text"}
+          - label: "Base de Conocimientos"
+            name: "knowledgeBase"
+            widget: "list"
+            fields:
+              - {label: "Palabra Clave", name: "key", widget: "string"}
+              - {label: "Respuesta", name: "response", widget: "text"}
+      - name: "footer"
+        label: "Pie de Página (Footer)"
+        file: "src/data/footer.json"
+        fields:
+          - {label: "Texto Copyright", name: "copyright", widget: "string"}
+          - {label: "Crédito Diseño", name: "credit", widget: "string"}
 
   - name: "activities"
     label: "Actividades"

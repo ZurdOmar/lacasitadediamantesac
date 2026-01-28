@@ -1,41 +1,30 @@
 import { Target, Users2, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
+import missionData from '../data/mission.json';
+
+const iconMap = {
+    Users2: <Users2 size={32} />,
+    Target: <Target size={32} />,
+    Shield: <Shield size={32} />
+};
 
 const Mission = () => {
-    const pillars = [
-        {
-            title: 'Equipo Integral',
-            description: 'Profesionales y voluntarios comprometidos con el desarrollo social y humano.',
-            icon: <Users2 size={32} />
-        },
-        {
-            title: 'Misión Social',
-            description: 'Atención directa a familias en vulnerabilidad con gestión de recursos básicos.',
-            icon: <Target size={32} />
-        },
-        {
-            title: 'Cultura y Educación',
-            description: 'Herramientas para que cada niño brille y encuentre su propio potencial.',
-            icon: <Shield size={32} />
-        }
-    ];
-
     return (
         <section id="nosotros" style={{ padding: 'var(--section-padding)', background: 'white' }}>
             <div className="container">
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
                     <div>
-                        <h2 className="section-title" style={{ textAlign: 'left', margin: 0 }}>Nuestra Esencia</h2>
+                        <h2 className="section-title" style={{ textAlign: 'left', margin: 0 }}>{missionData.title}</h2>
                         <p style={{ fontSize: '1.2rem', color: 'var(--color-text-secondary)', marginTop: '2rem' }}>
-                            En <strong>La Casita de Diamantes A.C.</strong>, no solo damos ayuda; construimos puentes. Nos enfocamos en formar un ecosistema de apoyo que abarca desde la ludicidad hasta la gestión social profesional.
+                            {missionData.description1}
                         </p>
                         <p style={{ marginTop: '1.5rem', color: 'var(--color-text-secondary)' }}>
-                            Creemos en un modelo donde lo social, cultural y educativo se entrelazan para proteger y potenciar a la niñez mexicana.
+                            {missionData.description2}
                         </p>
                     </div>
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                        {pillars.map((pillar, index) => (
+                        {missionData.pillars.map((pillar, index) => (
                             <motion.div
                                 key={index}
                                 whileHover={{ x: 10 }}
@@ -55,7 +44,7 @@ const Mission = () => {
                                     padding: '0.8rem',
                                     borderRadius: '1rem'
                                 }}>
-                                    {pillar.icon}
+                                    {iconMap[pillar.icon as keyof typeof iconMap]}
                                 </div>
                                 <div>
                                     <h4 style={{ marginBottom: '0.3rem', fontSize: '1.1rem' }}>{pillar.title}</h4>

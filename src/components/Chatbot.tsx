@@ -1,23 +1,14 @@
 import { useState } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import chatbotData from '../data/chatbot.json';
 
 const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([
-        { text: '¡Hola! Soy el asistente de La Casita de Diamantes A.C. ¿En qué puedo ayudarte hoy?', isBot: true }
+        { text: chatbotData.welcomeMessage, isBot: true }
     ]);
     const [input, setInput] = useState('');
-
-    const KB = {
-        'donar en linea': '¡Claro! Puedes donar ahora mismo con tarjeta de crédito o PayPal haciendo clic en el botón rosa de la sección de Donaciones.',
-        'donar': 'Puedes donar a través de transferencia bancaria, en especie o en línea por PayPal/Tarjeta. Haz clic en la sección de Donaciones para más detalles.',
-        'actividades': 'Ofrecemos actividades lúdicas, gestión social, talleres culturales y apoyo educativo para niños y familias.',
-        'cluni': 'Sí, contamos con CLUNI activa y estamos registrados como donataria autorizada ante el SAT.',
-        'contacto': 'Puedes contactarnos a través de nuestras redes sociales o visitarnos en nuestra sede. ¡Estamos para servirte!',
-        'niños': 'Nuestro enfoque principal es el bienestar y desarrollo integral de la niñez en situaciones vulnerables.',
-        'default': 'Lo siento, no tengo esa información exacta. Pero puedes contactarnos directamente y con gusto te atenderemos.'
-    };
 
     const handleSend = () => {
         if (!input.trim()) return;
@@ -26,16 +17,11 @@ const Chatbot = () => {
         setMessages(prev => [...prev, userMsg]);
 
         const lowerInput = input.toLowerCase();
-        let response = KB.default;
 
-        // More robust keyword matching
-        const match = Object.keys(KB).find(key => key !== 'default' && lowerInput.includes(key));
+        // Find matching response in KB array
+        const match = chatbotData.knowledgeBase.find(item => lowerInput.includes(item.key.toLowerCase()));
 
-        if (match) {
-            response = KB[match as keyof typeof KB];
-        } else {
-            response = `Lo siento, no entendí eso. ¿Tal vez quieras saber sobre: ${Object.keys(KB).filter(k => k !== 'default').join(', ')}? Escribe una de estas palabras clave para ayudarte.`;
-        }
+        const response = match ? match.response : chatbotData.fallbackMessage;
 
         setTimeout(() => {
             setMessages(prev => [...prev, { text: response, isBot: true }]);

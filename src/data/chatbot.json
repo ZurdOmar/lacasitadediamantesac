@@ -1,0 +1,30 @@
+{
+    "welcomeMessage": "¡Hola! Soy el asistente de La Casita de Diamantes A.C. ¿En qué puedo ayudarte hoy?",
+    "fallbackMessage": "Lo siento, no tengo esa información exacta. Pero puedes contactarnos directamente y con gusto te atenderemos.",
+    "knowledgeBase": [
+        {
+            "key": "donar en linea",
+            "response": "¡Claro! Puedes donar ahora mismo con tarjeta de crédito o PayPal haciendo clic en el botón rosa de la sección de Donaciones."
+        },
+        {
+            "key": "donar",
+            "response": "Puedes donar a través de transferencia bancaria, en especie o en línea por PayPal/Tarjeta. Haz clic en la sección de Donaciones para más detalles."
+        },
+        {
+            "key": "actividades",
+            "response": "Ofrecemos actividades lúdicas, gestión social, talleres culturales y apoyo educativo para niños y familias."
+        },
+        {
+            "key": "cluni",
+            "response": "Sí, contamos con CLUNI activa y estamos registrados como donataria autorizada ante el SAT."
+        },
+        {
+            "key": "contacto",
+            "response": "Puedes contactarnos a través de nuestras redes sociales o visitarnos en nuestra sede. ¡Estamos para servirte!"
+        },
+        {
+            "key": "niños",
+            "response": "Nuestro enfoque principal es el bienestar y desarrollo integral de la niñez en situaciones vulnerables."
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "title": "Nuestra Esencia",
+    "description1": "En La Casita de Diamantes A.C., no solo damos ayuda; construimos puentes. Nos enfocamos en formar un ecosistema de apoyo que abarca desde la ludicidad hasta la gestión social profesional.",
+    "description2": "Creemos en un modelo donde lo social, cultural y educativo se entrelazan para proteger y potenciar a la niñez mexicana.",
+    "pillars": [
+        {
+            "title": "Equipo Integral",
+            "description": "Profesionales y voluntarios comprometidos con el desarrollo social y humano.",
+            "icon": "Users2"
+        },
+        {
+            "title": "Misión Social",
+            "description": "Atención directa a familias en vulnerabilidad con gestión de recursos básicos.",
+            "icon": "Target"
+        },
+        {
+            "title": "Cultura y Educación",
+            "description": "Herramientas para que cada niño brille y encuentre su propio potencial.",
+            "icon": "Shield"
+        }
+    ]
+}

@@ -8,14 +8,14 @@ const Donations = () => {
             backgroundColor: 'var(--color-bg-primary)',
         }}>
             <div className="container">
-                <h2 className="section-title">Apoya nuestra causa</h2>
+                <h2 className="section-title">{donationsData.sectionTitle}</h2>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
                     <div className="glass-card" style={{ padding: '2.5rem' }}>
                         <h3 style={{ color: 'var(--color-mexican-pink)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            <HeartHandshake /> ¿Cómo ayudar?
+                            <HeartHandshake /> {donationsData.helperTitle}
                         </h3>
                         <p style={{ marginBottom: '1.5rem', color: 'var(--color-text-secondary)' }}>
-                            Puedes contribuir de diversas maneras: desde donativos económicos únicos o recurrentes, hasta donaciones en especie (ropa, juguetes, material escolar).
+                            {donationsData.helperDescription}
                         </p>
                         <ul style={{ listStyle: 'none', padding: 0 }}>
                             <li style={{ marginBottom: '0.8rem', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
@@ -52,7 +52,7 @@ const Donations = () => {
                     }}>
                         <h3 style={{ color: 'white', marginBottom: '1.5rem' }}>Tu impacto</h3>
                         <p style={{ marginBottom: '2rem', opacity: 0.9 }}>
-                            Cada peso donado se destina directamente a programas de alimentación, educación y salud para las familias que más lo necesitan.
+                            {donationsData.impactDescriptionMain}
                         </p>
                         <div style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '0.5rem' }}>{donationsData.impactTitle}</div>
                         <div style={{ opacity: 0.8, fontWeight: 500 }}>{donationsData.impactDescription}</div>

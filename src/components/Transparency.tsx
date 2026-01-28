@@ -5,9 +5,9 @@ const Transparency = () => {
     return (
         <section id="transparencia" style={{ padding: 'var(--section-padding)' }}>
             <div className="container">
-                <h2 className="section-title">Compromiso y Transparencia</h2>
+                <h2 className="section-title">{transparencyData.sectionTitle}</h2>
                 <p style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4rem', color: 'var(--color-text-secondary)' }}>
-                    En La Casita de Diamantes A.C., la confianza es nuestro pilar. Cumplimos con todas las normativas fiscales y legales vigentes en México.
+                    {transparencyData.sectionDescription}
                 </p>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
