@@ -3,6 +3,8 @@ backend:
   name: git-gateway
   branch: main
 
+locale: 'es'
+
 media_folder: "public/assets/uploads"
 public_folder: "/assets/uploads"
 
