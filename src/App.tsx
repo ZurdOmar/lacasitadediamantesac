@@ -5,30 +5,16 @@ import Activities from './components/Activities';
 import Donations from './components/Donations';
 import Transparency from './components/Transparency';
 import Chatbot from './components/Chatbot';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-declare global {
-  interface Window {
-    netlifyIdentity: any;
-  }
-}
+
 
 import footerData from './data/footer.json';
 
 function App() {
   const [isActivityDetailOpen, setIsActivityDetailOpen] = useState(false);
 
-  useEffect(() => {
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", (user: any) => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  }, []);
+
 
   return (
     <div className="app">
